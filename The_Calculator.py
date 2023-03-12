@@ -20,16 +20,28 @@ operators = {
     "*": multiply,
     "/": divide
 }
+def calc():
 
-num1 = int(input("First number: "))
-num2 = int(input("Second number: "))
+    num1 = int(input("First number: "))
+    num2 = int(input("Second number: "))
 
-for o in operators:
-    print(o)
+    for o in operators:
+        print(o)
 
-symbol = input("Pick an operator from above: ")
+    symbol = input("Pick an operator from above: ")
 
-calculation = operators[symbol]
-answer = calculation(num1, num2)
+    calculation = operators[symbol]
+    answer = calculation(num1, num2)
 
-print(f"{num1} {symbol} {num2} = {answer}")
+    print(f"{num1} {symbol} {num2} = {answer}")
+
+
+    more = input("Do you want another calculation? Type 'y' for yes or 'n' for no. ")
+    more = str(more)
+
+    if more == 'y' or more == 'yes':
+        calc()
+    else:
+        print("Thanks for using the app.")
+        
+calc()
